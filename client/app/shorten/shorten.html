@@ -1,9 +1,10 @@
 <div id='shorten'>
   <h1>shorten</h1>
-  <form name="signupForm" ng-submit='addLink()'>
+  <form name="shortenForm" ng-submit='addLink()' novalidate>
     <input type='url' ng-model='link.url'>
-  <button>shorten</button>
+  <button ng-disabled="shortenForm.$invalid">shorten</button>
   </form>
+  <span class = 'error' ng-show="shortenForm.$error.url">INVALID URL!</span>
 </div>
 
 
