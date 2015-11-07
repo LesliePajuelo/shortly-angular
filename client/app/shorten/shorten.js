@@ -5,10 +5,8 @@ angular.module('shortly.shorten', [])
 
   $scope.addLink = function(){
     Shorten.addLink($scope.link).then(function () {
-      //?? convert link to a code
-      console.log('before catch');
+      $location.path('/links');
     }).catch(function (err) {
-      console.log($scope.link);
       console.log(err);
     })
   }
