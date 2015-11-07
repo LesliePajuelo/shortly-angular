@@ -4,9 +4,11 @@ angular.module('shortly.shorten', [])
   $scope.link = {};
 
   $scope.addLink = function(){
-    Shorten.addLink().then(function (url) {
-      //??
+    Shorten.addLink($scope.link).then(function () {
+      //?? convert link to a code
+      console.log('before catch');
     }).catch(function (err) {
+      console.log($scope.link);
       console.log(err);
     })
   }
