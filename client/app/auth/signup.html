@@ -1,8 +1,9 @@
 <div id='signup'>
   <h1>signup</h1>
   <form name="signupForm" ng-submit='signup()'>
-    <input name="nameInput" type='text' ng-model='user.username' ng-pattern = "/[A-Z0-9]/gi">
-    <input name="passwordInput" type="password" ng-model='user.password' ng-pattern = "/[A-Z0-9]/gi">
+    <input name="nameInput" type='text' ng-model='user.username' ng-minlength = 4 >
+     <input name="passwordInput" type="password" ng-model='user.password'ng-minlength = 4 >
+      
     <button>signup</button>
   </form>
   <span class = 'error' ng-show="signupForm.nameInput.$invalid && signupForm.nameInput.$dirty">Invalid username</span>
@@ -10,3 +11,4 @@
   <a href="#/signin">Already have an account? <strong>Signin</strong> ...</a>
 </div>
 
+<!-- myForm.$error.required = {{!!myForm.$error.required}}</tt> -->

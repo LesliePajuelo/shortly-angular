@@ -75,9 +75,15 @@ h1 {
   margin-left: 20px;
 }
 
-.link .visits .count {
+.link .text {
+  display: inline-block;
+  font-size: 14px;
+}
+
+.link .count {
   font-size: 46px;
   font-weight: 600;
+  display: inline-block;
 }
 
 .link .title {

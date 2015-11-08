@@ -1,9 +1,35 @@
 <div id='links'>
   <!-- link, shortened, visits -->
-   
+   <label> Search <input ng-model="linksSearch"></label>
+
   <div ng-controller = "LinksController">
-  <div ng-repeat = "link in data.links">
-  {{link}}
+  <div ng-repeat = "link in data.links | filter:linksSearch | orderBy:links.visits">
+  <div class = "link"><div class = "img"><img src="assets/redirect_icon.png"></div><div class = "title"> {{link.title}}</div><div class = "count visits">{{link.visits}} <div class="text visits">visits</div></div><div class="original">{{link.url}}</div><a ng-href="http://localhost:3000/api/links/{{link.code}}"><div class = "info">{{link.base_url+'/'+link.code}}</div></a></div>
 </div>
   <div>
 </div>
+
+<!-- 
+.link
+
+.link:hover
+
+.link img
+
+.link .visits
+
+.link .visits .count
+
+.link .title
+
+.link .original
+
+.link .info
+
+
+"_id":"563e4564a3a397614dce110d",
+"code":"5891c",
+"url":"http://www.abc.com",
+"visits":0,
+"base_url":"http://localhost:3000",
+"title":"ABC Home Schedule And Shows Pages - ABC.com","__v":0} -->
